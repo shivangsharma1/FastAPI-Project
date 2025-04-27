@@ -5,8 +5,14 @@ app = FastAPI()
 
 
 @app.get("/")
-def read_root():
+async def read_root():
     return {"Hello ":"World"}
+
+@app.get('/greet/{name}')
+async def greet_anme(name: str) -> dict:
+    return {"Message":f"Hello World : {name}"}
+
+
 
 @app.get("/hello")
 def main():
