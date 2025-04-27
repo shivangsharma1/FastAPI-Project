@@ -8,8 +8,8 @@ app = FastAPI()
 async def read_root():
     return {"Hello ":"World"}
 
-@app.get('/greet/{name}')
-async def greet_anme(name: str) -> dict:
+@app.get('/greet')
+async def greet_name(name: str) -> dict:
     return {"Message":f"Hello World : {name}"}
 
 
